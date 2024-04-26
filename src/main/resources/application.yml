@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: money-observer
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/money_observer
+    username: postgres
+    password: postgresroot
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: nazar.shuliak.oi.2022@lpnu.ua
+    password: vfnppjoxfqdrhjqx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+logging:
+  level:
+    root: info
+
+jwt:
+  secret-key: sdklfmskdv;avqervndfjvnksdfhwbrq34-ui2p34h
+  lifetime: 600000000
