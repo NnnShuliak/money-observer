@@ -3,7 +3,6 @@ package ua.lpnu.moneyobserver.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ua.lpnu.moneyobserver.dao.IncomeRepository;
-import ua.lpnu.moneyobserver.domain.ExpenseCategory;
 import ua.lpnu.moneyobserver.domain.Income;
 import ua.lpnu.moneyobserver.service.IncomeService;
 

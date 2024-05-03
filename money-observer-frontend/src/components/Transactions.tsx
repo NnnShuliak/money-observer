@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import ExpenseCreationForm from "./TransactionCreationForm";
 import {
   deleteExpense,
-  deleteIncome,
+  deleteIncome, formatDate,
   getCategories,
   getExpenses,
   getIncome,
@@ -75,7 +75,7 @@ const Transactions: React.FC<TransactionProps> = ({
             <tr key={index}>
               <td>{transaction.description}</td>
               <td style={{ color: color }}>${transaction.amount}</td>
-              <td>{transaction.time}</td>
+              <td>{formatDate(transaction.time)}</td>
               <td>
                 <Button
                   variant="danger"

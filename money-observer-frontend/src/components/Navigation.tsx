@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import "../styles/Navidation.css";
+
 import { Navbar, Container } from "react-bootstrap";
 import { getUsername } from "../utils";
+import "../styles/Navidation.css";
 
 const Navigation: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -20,9 +21,9 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <Navbar className="navigation">
+    <Navbar className="navigation bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/home">Navbar with text</Navbar.Brand>
+        <Navbar.Brand href="/home">Money observer</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text className="navigation-text">

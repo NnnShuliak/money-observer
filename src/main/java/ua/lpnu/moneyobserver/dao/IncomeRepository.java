@@ -2,7 +2,6 @@ package ua.lpnu.moneyobserver.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import ua.lpnu.moneyobserver.domain.ExpenseCategory;
 import ua.lpnu.moneyobserver.domain.Income;
 
 import java.util.List;

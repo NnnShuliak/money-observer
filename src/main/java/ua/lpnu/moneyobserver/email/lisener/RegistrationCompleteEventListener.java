@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import ua.lpnu.moneyobserver.domain.User;
 import ua.lpnu.moneyobserver.domain.VerificationToken;
 import ua.lpnu.moneyobserver.email.RegistrationCompleteEvent;
-import ua.lpnu.moneyobserver.service.UserService;
 import ua.lpnu.moneyobserver.service.VerificationTokenService;
 
 import java.io.UnsupportedEncodingException;
@@ -24,7 +23,6 @@ import java.io.UnsupportedEncodingException;
 @Component
 @RequiredArgsConstructor
 public class RegistrationCompleteEventListener implements ApplicationListener<RegistrationCompleteEvent> {
-    private final UserService userService;
     private final VerificationTokenService tokenService;
     private final JavaMailSender mailSender;
 

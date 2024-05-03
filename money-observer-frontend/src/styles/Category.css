@@ -1,0 +1,12 @@
+
+.selected-color {
+    background-color: rgba(143, 166, 165, 0.62);
+}
+
+.category-button {
+    background-color: #c4d9d9;
+    border-radius: 2px;
+    width: 50%;
+    margin: 0 auto;
+
+}

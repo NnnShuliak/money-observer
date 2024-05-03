@@ -7,6 +7,8 @@ import {
   ProgressBar,
 } from "react-bootstrap";
 import { currencyFormatter } from "../utils";
+import "../styles/Category.css";
+import "../index.css";
 
 interface Props {
   title: string;
@@ -14,7 +16,7 @@ interface Props {
   max?: number;
   selected: boolean;
   onClick: () => void;
-  onDelete?: () => void; // Add onDelete prop
+  onDelete?: () => void;
 }
 
 const Category: React.FC<Props> = ({
@@ -23,23 +25,23 @@ const Category: React.FC<Props> = ({
   max,
   selected,
   onClick,
-  onDelete, // Destructure onDelete prop
+  onDelete,
 }) => {
-  const formatedAmount = currencyFormatter.format(amount);
-  const formatedMax = max ? currencyFormatter.format(max) : "";
+  const formattedAmount = currencyFormatter.format(amount);
+  const formattedMax = max ? currencyFormatter.format(max) : "";
 
-  const cardClassName = selected ? "bg-secondary" : "bg-light";
+  let cardClassName = selected ? "selected-color" : "bg-light";
 
   return (
     <div onClick={onClick}>
-      <Card className={cardClassName + " m-3"}>
+      <Card className={cardClassName+" m-3"}>
         <CardBody>
           <CardTitle className="d-flex justify-content-between align-items-baseline fw-normal mb-1">
             <div className="me-2">{title}</div>
             <div className="d-flex align-items-baseline">
-              {formatedAmount}
+              {formattedAmount}
               {max && (
-                <span className="text-muted fs-6 ms-1">/ {formatedMax}</span>
+                <span className="text-muted fs-6 ms-1">/ {formattedMax}</span>
               )}
               {onDelete && (
                 <Button variant="danger" onClick={onDelete} className="ms-2">

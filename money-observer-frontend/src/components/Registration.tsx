@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import {Form, Button, Alert} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const RegistrationPage: React.FC = () => {
@@ -8,6 +8,7 @@ const RegistrationPage: React.FC = () => {
     email: "",
     password: "",
   });
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,14 +31,22 @@ const RegistrationPage: React.FC = () => {
       },
     });
     if (res.ok) {
+      alert("Verification was send on your email!")
       navigate("/login");
+    }else{
+      setShowAlert(true);
     }
     console.log("Registration data:", formData);
   }
 
   return (
-    <div className="container">
+    <div  className="container p-5 loginPage" style={{ width: "500px" }}>
       <h2>Registration</h2>
+      {showAlert && (
+          <Alert variant="danger" onClose={() => setShowAlert(false)} dismissible>
+            Registration failed. Please try again.
+          </Alert>
+      )}
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formUsername">
           <Form.Label>Username</Form.Label>
@@ -72,10 +81,14 @@ const RegistrationPage: React.FC = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button className="mt-3" variant="primary" type="submit">
           Register
         </Button>
       </Form>
+      <div className="mt-3 text-center">
+        Already have an account?{" "}
+        <a href="/login">Log in here</a>
+      </div>
     </div>
   );
 };

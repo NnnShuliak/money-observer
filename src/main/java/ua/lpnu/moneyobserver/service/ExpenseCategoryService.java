@@ -12,7 +12,7 @@ public interface ExpenseCategoryService {
 
     ExpenseCategory create(ExpenseCategory expenseCategory);
 
-     Integer getSumOfAllRatiosInUser(Long userId);
+     Double getSumOfAllRatiosInUser(Long userId);
 
     void delete(Long categoryId);
 }

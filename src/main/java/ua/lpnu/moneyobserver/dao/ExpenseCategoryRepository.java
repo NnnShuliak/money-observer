@@ -21,5 +21,5 @@ public interface ExpenseCategoryRepository extends JpaRepository<ExpenseCategory
     List<ExpenseCategoryDTO> findAllByUser(String email, Double totalIncome);
 
     @Query("SELECT COALESCE(SUM(ec.ratio), 0) FROM ExpenseCategory ec where ec.user.id= :userId")
-    Integer sumOfAllRatios(Long userId);
+    Double sumOfAllRatios(Long userId);
 }

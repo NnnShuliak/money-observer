@@ -3,6 +3,7 @@ package ua.lpnu.moneyobserver.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import java.sql.Timestamp;
 
@@ -10,6 +11,7 @@ import java.sql.Timestamp;
 @Table(name="income")
 @Getter
 @Setter
+@Accessors(chain = true)
 public class Income {
 
     @Id

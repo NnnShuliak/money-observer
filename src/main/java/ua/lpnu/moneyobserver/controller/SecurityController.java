@@ -38,7 +38,7 @@ public class SecurityController {
     public ResponseEntity<?> registerUser(@RequestBody User user, final HttpServletRequest request) {
         log.info("registration post method was called");
         User registredUser = userService.createNewUser(user);
-        publisher.publishEvent(new RegistrationCompleteEvent(registredUser, applicationUrl(request)));
+        publisher.publishEvent(new RegistrationCompleteEvent(registredUser, getApplicationUrl(request)));
         return ResponseEntity.ok(registredUser);
     }
 
@@ -68,7 +68,7 @@ public class SecurityController {
         return new ResponseEntity<>("Invalid token",HttpStatus.BAD_REQUEST);
     }
 
-    private String applicationUrl(HttpServletRequest request) {
+    private String getApplicationUrl(HttpServletRequest request) {
         return "http://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
     }
 }

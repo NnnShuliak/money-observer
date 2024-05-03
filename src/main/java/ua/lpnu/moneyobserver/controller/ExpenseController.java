@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import ua.lpnu.moneyobserver.domain.Expense;
 import ua.lpnu.moneyobserver.domain.ExpenseCategory;
 import ua.lpnu.moneyobserver.service.ExpenseService;
-import ua.lpnu.moneyobserver.service.impl.ExpenseServiceImpl;
-import ua.lpnu.moneyobserver.service.impl.UserServiceImpl;
 
 import java.security.Principal;
 import java.util.List;

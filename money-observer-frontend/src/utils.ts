@@ -41,8 +41,19 @@ export const getSavings = async (token: string | null) => {
   const data = await response.json();
   const totalIncome = await getTotalncome(token);
 
-  return totalIncome - data.totalSpending;
+  return totalIncome - (isNaN(data.totalSpending)?0:data.totalSpending);
 };
+
+export const formatDate= (dateString: string): string =>{
+  const date = new Date(dateString);
+  const year = date.getFullYear().toString();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day} ${hours}:${minutes}`;
+}
 
 export const getUsername = async (token: string | null) => {
   const response = await fetch("http://localhost:8080/api/users", {
