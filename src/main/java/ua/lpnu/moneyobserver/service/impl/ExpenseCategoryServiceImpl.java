@@ -34,7 +34,7 @@ public class ExpenseCategoryServiceImpl implements ExpenseCategoryService {
         log.info("Available ratio = {}",availableRatio);
         if (availableRatio < expenseCategory.getRatio()) {
             throw new IllegalArgumentException(
-                    String.format("ExpenseCategory ratio:%f is greater then available:%d", expenseCategory.getRatio(), availableRatio));
+                    String.format("ExpenseCategory ratio:%f is greater then available:%f", expenseCategory.getRatio(), availableRatio));
         }
         return repository.save(expenseCategory);
     }

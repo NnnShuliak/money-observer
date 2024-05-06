@@ -99,6 +99,7 @@ const CategorySection = ({
                 }
             );
             if (response.ok) {
+                setSavings(await getSavings(token));
                 setCategories(
                     categories.filter((category: any) => category.id !== categoryId)
                 );
@@ -120,7 +121,6 @@ const CategorySection = ({
                 onClick={() => handleIncomeClick()}
             />
             <div className="ms-3 savings">Savings = {currencyFormatter.format(savings)}</div>
-
 
             <div>
                 {categories.map((category: any) => (

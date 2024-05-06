@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Button,
   Card,
@@ -7,8 +7,9 @@ import {
   ProgressBar,
 } from "react-bootstrap";
 import { currencyFormatter } from "../utils";
-import "../styles/Category.css";
+
 import "../index.css";
+import "../styles/Category.css";
 
 interface Props {
   title: string;
@@ -30,7 +31,7 @@ const Category: React.FC<Props> = ({
   const formattedAmount = currencyFormatter.format(amount);
   const formattedMax = max ? currencyFormatter.format(max) : "";
 
-  let cardClassName = selected ? "selected-color" : "bg-light";
+  const cardClassName = selected ? "bg-secondary" : "bg-light";
 
   return (
     <div onClick={onClick}>

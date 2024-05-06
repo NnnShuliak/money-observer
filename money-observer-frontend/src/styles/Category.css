@@ -1,6 +1,6 @@
 
-.selected-color {
-    background-color: rgba(143, 166, 165, 0.62);
+.bg-secondary {
+    background-color: rgba(143, 166, 165, 0.62) !important;
 }
 
 .category-button {
