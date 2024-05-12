@@ -56,6 +56,7 @@ public class SecurityController {
     }
     @GetMapping("/verifyEmail")
     public ResponseEntity<?> verifyEmail(@RequestParam("token") String token) {
+        jwtCore.validateTokenAndGetUsername(token);
         log.info("verify get method was called");
         VerificationToken theToken = tokenService.findByToken(token);
         if (theToken.getUser().isEnabled()) {

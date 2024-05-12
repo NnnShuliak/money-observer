@@ -124,5 +124,5 @@ export const getTotalncome = async (token: string | null) => {
     },
   });
   const data = await response.json();
-  return data.totalIncome;
+  return isNaN(data.totalIncome)?0:data.totalIncome;
 };

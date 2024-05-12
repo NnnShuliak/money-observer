@@ -19,7 +19,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: nazar.shuliak.oi.2022@lpnu.ua
-    password: vfnppjoxfqdrhjqx
+    password: ${EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -31,5 +31,5 @@ logging:
     root: info
 
 jwt:
-  secret-key: sdklfmskdv;avqervndfjvnksdfhwbrq34-ui2p34h
+  secret-key: ${JWT_KEY}
   lifetime: 600000000

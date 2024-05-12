@@ -48,9 +48,7 @@ public class ExpanseCategoryControllerTest {
 
     @BeforeEach
     public void setup() {
-        // Mocking userService to return a dummy User object
         when(userService.findByEmail(USER_EMAIL)).thenReturn(new User());
-        // Mocking expenseCategoryService to return a list of dummy ExpenseCategoryDTO objects
         when(expenseCategoryService.findAllInUser(USER_EMAIL)).thenReturn(Collections.singletonList(
                 new ExpenseCategoryDTO(1L, "Test Category", 0.0, 0.0)
         ));

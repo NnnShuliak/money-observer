@@ -22,7 +22,7 @@
     <springProperty scope="context" name="smtpPort" source="spring.mail.port"/>
     <springProperty scope="context" name="username" source="spring.mail.username"/>
     <springProperty scope="context" name="password" source="spring.mail.password"/>
-    <!-- Mail Appender -->
+
     <appender name="MAIL" class="ch.qos.logback.classic.net.SMTPAppender" >
         <smtpHost>${smtpHost}</smtpHost>
         <smtpPort>${smtpPort}</smtpPort>
@@ -47,7 +47,6 @@
     </appender>
 
 
-    <!-- Root Logger Configuration -->
     <root level="INFO">
         <appender-ref ref="FILE" />
         <appender-ref ref="MAIL" />
